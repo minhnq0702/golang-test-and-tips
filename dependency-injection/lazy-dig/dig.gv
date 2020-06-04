@@ -1,0 +1,24 @@
+digraph {
+	rankdir=RL;
+	graph [compound=true];
+	
+		subgraph cluster_0 {
+			constructor_0 [shape=plaintext label="main.func1"];
+			
+			"func() *main.RequestContext" [label=<func() *main.RequestContext>];
+			
+		}
+		
+		
+		subgraph cluster_1 {
+			constructor_1 [shape=plaintext label="NewRequesthandler"];
+			
+			"*main.RequestHandler" [label=<*main.RequestHandler>];
+			
+		}
+		
+			constructor_1 -> "func() *main.RequestContext" [ltail=cluster_1];
+		
+		
+	
+}

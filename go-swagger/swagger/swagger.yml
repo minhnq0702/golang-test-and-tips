@@ -1,0 +1,122 @@
+consumes:
+- application/io.goswagger.examples.todo-list.v1+json
+definitions: 
+  item:
+    type: object
+    required:
+      - description
+    properties:
+      id:
+        type: integer
+        format: int64
+        readOnly: true
+      description:
+        type: string
+        minLength: 1
+      completed:
+        type: boolean
+  error:
+    type: object
+    required:
+      - message
+    properties:
+      code:
+        type: integer
+        format: int64
+      message:
+        type: string
+info:
+  description: todo list swagger learning
+  title: TODO LIST
+  version: 1.0.0
+paths:
+  /todos:
+    get:
+      tags:
+        - todos
+      operationId: findTodo
+      parameters:
+        - name: since
+          in: query
+          type: integer
+          format: int64
+        - name: limit
+          in: query
+          type: integer
+          format: int64
+          default: 20
+      responses:
+        200:
+          description: list of the todo operations
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/item"
+        default:
+          description: generic error response
+          schema:
+            $ref: "#/definitions/error"
+    post:
+      tags:
+        - todos
+      operationId: addTodo
+      parameters:
+        - name: body
+          in: body
+          schema:
+            $ref: "#/definitions/item"  
+      responses:
+        201:
+          description: Todo Created
+          schema:
+            $ref: "#/definitions/item"
+        default:
+          description: Create Error
+          schema:
+            $ref: "#/definitions/error"
+  
+      # delete:
+      #   tags:
+      #     - todos
+      #   operationId: removeTodos
+  /todos/{id}:
+    parameters:
+      - name: id
+        in: path
+        type: integer
+        format: int64
+        required: true
+    delete:
+      tags:
+        - todos
+      operationId: removeTodo
+      responses:
+        204:
+          description: Deleted
+        default:
+          description: Delete error
+          schema:
+            $ref: "#/definitions/error"
+    put:
+      tags:
+        - todos
+      operationId: updateTodo
+      parameters:
+        - name: body
+          in: body
+          schema:
+            $ref: "#/definitions/item"
+      responses:
+        200:
+          description: Updated
+          schema:
+            $ref: "#/definitions/item"
+        default:
+          description: Update error
+          schema:
+            $ref: "#/definitions/error"
+produces:
+- application/io.goswagger.examples.todo-list.v1+json
+schemes:
+- http
+swagger: "2.0"
