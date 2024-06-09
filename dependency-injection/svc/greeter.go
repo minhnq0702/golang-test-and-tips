@@ -1,7 +1,7 @@
 package svc
 
 import (
-	"MYGO/studying/dependency-injection/store"
+	"dependency-injection/store"
 	"fmt"
 )
 

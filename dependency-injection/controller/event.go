@@ -1,7 +1,7 @@
 package controller
 
 import (
-	"MYGO/studying/dependency-injection/svc"
+	"dependency-injection/svc"
 	"fmt"
 )
 

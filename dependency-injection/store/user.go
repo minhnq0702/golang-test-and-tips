@@ -1,5 +1,5 @@
 package store
 
-type UserStore interface {
+type UserStore struct {
 	DBConnection string
 }

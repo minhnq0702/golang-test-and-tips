@@ -1,9 +1,9 @@
 package main
 
 import (
-	"MYGO/studying/dependency-injection/controller"
-	"MYGO/studying/dependency-injection/store"
-	"MYGO/studying/dependency-injection/svc"
+	"dependency-injection/controller"
+	"dependency-injection/store"
+	"dependency-injection/svc"
 	"fmt"
 	"log"
 
@@ -35,7 +35,6 @@ func main() {
 	if err != nil {
 		log.Fatalln("Can not inject controller", err.Error())
 	}
-
 	c.Invoke(controller.EventCtrl.PushMessage)
 
 	fmt.Println("End inject ====>")
