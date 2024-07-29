@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"math/rand"
 	"os"
-	"time"
 
 	"go.uber.org/dig"
 )
@@ -40,7 +39,6 @@ func (handler *RequestHandler) HandleRequest() {
 }
 
 func main() {
-	rand.Seed(time.Now().UnixNano())
 	c := dig.New()
 
 	// Wrap function make request by another function, so request instances will be provided multiple
@@ -70,7 +68,7 @@ func main() {
 		panic(err)
 	}
 
-	graph, err := os.Create("./lazy-dig/dig.gv")
+	graph, err := os.Create("dig.gv")
 	if err != nil {
 		panic(err)
 	}

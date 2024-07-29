@@ -3,6 +3,7 @@ digraph {
 	graph [compound=true];
 	
 		subgraph cluster_0 {
+			label = "main";
 			constructor_0 [shape=plaintext label="main.func1"];
 			
 			"func() *main.RequestContext" [label=<func() *main.RequestContext>];
@@ -11,6 +12,7 @@ digraph {
 		
 		
 		subgraph cluster_1 {
+			label = "main";
 			constructor_1 [shape=plaintext label="NewRequesthandler"];
 			
 			"*main.RequestHandler" [label=<*main.RequestHandler>];
