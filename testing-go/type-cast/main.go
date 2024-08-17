@@ -32,6 +32,6 @@ func main() {
 	fmt.Println("==Reflect", reflect.Indirect(structVal))
 
 	test := map[string]interface{}{"a": "a"}
-	test2, _ := test["b"].(string)
-	fmt.Println("====>", test2)
+	test2, ok := test["b"].(string)
+	fmt.Println("====>", len(test2), ok)
 }
