@@ -100,7 +100,7 @@ func (c *LFUCache) Delete(key int) {
 	c.CurrentSize--
 }
 
-func TestCache(size int) {
+func TestCache() {
 	// * INPUT: [[1,1],[2,2],[3,3],[4,4],[4],[3],[2],[1],[5,5],[1],[2],[3],[4],[5]]
 	// * OUTPUT: [null,null,null,null,4,3,2,-1,null,-1,2,3,-1,5]
 	CacheOpts := [][]int{
@@ -108,7 +108,6 @@ func TestCache(size int) {
 	}
 	myCache := NewLFUCache(10)
 
-	fmt.Println("HAHAHA", make([]list.List, 1))
 	for _, opt := range CacheOpts {
 		// fmt.Printf("action %v with cache state %v - %v\n", opt, myCache.Cache, myCache.LFU)
 		if len(opt) == 1 {
