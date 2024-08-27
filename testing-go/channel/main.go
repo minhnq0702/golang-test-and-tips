@@ -1,7 +1,7 @@
 package main
 
 import (
-	channalbasic "channel/testbasic"
+	channalbasic "channel/channel-basic"
 	"fmt"
 	"time"
 )
