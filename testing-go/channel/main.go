@@ -1,8 +1,8 @@
 package main
 
 import (
+	channalbasic "channel/testbasic"
 	"fmt"
-	"test-channel/testbasic"
 	"time"
 )
 
@@ -23,7 +23,7 @@ func battle(name string, done chan struct{}) {
 }
 
 func main() {
-	testbasic.Channel_basic()
+	channalbasic.Channel_basic()
 	lstOpp := []string{"Dog", "Cat", "Shark"}
 
 	done := make(chan struct{})

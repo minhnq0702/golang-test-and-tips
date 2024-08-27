@@ -1,4 +1,4 @@
-package testbasic
+package channalbasic
 
 import (
 	"fmt"
