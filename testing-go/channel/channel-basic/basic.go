@@ -5,7 +5,7 @@ import (
 	"time"
 )
 
-func Channel_basic() {
+func TestChannelBasic() {
 	ch1 := make(chan string)
 	ch2 := make(chan string)
 

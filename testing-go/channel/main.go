@@ -23,7 +23,9 @@ func battle(name string, done chan struct{}) {
 }
 
 func main() {
-	channalbasic.Channel_basic()
+	channalbasic.TestChannelBasic()
+	// channalbasic.TestUnBuffChannel() // ! Test cause deadlock and panic
+	channalbasic.TestBuffChannel()
 	lstOpp := []string{"Dog", "Cat", "Shark"}
 
 	done := make(chan struct{})
