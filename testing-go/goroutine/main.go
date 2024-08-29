@@ -7,9 +7,8 @@ import (
 	"time"
 )
 
-var mut sync.Mutex
-
 func atomicCount(id int, counter *int32, wg *sync.WaitGroup) {
+	_ = id
 	defer wg.Done() // * decrease wg by 1
 	// defer mut.Unlock()
 	// mut.Lock()
